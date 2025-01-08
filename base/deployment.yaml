@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokedex
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: frontend
+          image: <your-dockerhub-username>/frontend-pokedex
+        - name: backend
+          image: <your-dockerhub-username>/backend-pokedex
