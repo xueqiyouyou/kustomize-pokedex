@@ -4,10 +4,16 @@ metadata:
   name: pokedex
 spec:
   replicas: 2
+  selector:
+    matchLabels:                # 添加 selector 字段
+      app: pokedex              # 选择标签，确保匹配 Pod 上的标签
   template:
+    metadata:
+      labels:                    # 添加 Pod 标签，确保与 selector 匹配
+        app: pokedex
     spec:
       containers:
         - name: frontend
-          image: <your-dockerhub-username>/frontend-pokedex
+          image: huangjingl/pokedex_front   # 替换为您的前端 Docker 镜像
         - name: backend
-          image: <your-dockerhub-username>/backend-pokedex
+          image: sofien3166/pokedex-registry    # 替换为您的后端 Docker 镜像

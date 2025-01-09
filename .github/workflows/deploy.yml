@@ -22,15 +22,15 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build Docker image
+    - name: Build Docker images
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-pokedex .
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/backend-pokedex .
+        docker build -t huangjingl/pokedex_front ./Pokedex_Front
+        docker build -t sofien3166/pokedex-registry ./Pokedex_Back
 
     - name: Push Docker images
       run: |
-        docker push ${{ secrets.DOCKER_USERNAME }}/frontend-pokedex
-        docker push ${{ secrets.DOCKER_USERNAME }}/backend-pokedex
+        docker push huangjingl/pokedex_front
+        docker push sofien3166/pokedex-registry
 
     - name: Set up Kubeconfig
       uses: azure/setup-kubectl@v1
