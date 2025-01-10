@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: huangjingl/pokedex_front   # 替换为您的前端 Docker 镜像
+          image: huangjingl/pokedex-front-v2   # 替换为您的前端 Docker 镜像
         - name: backend
-          image: sofien3166/pokedex-registry    # 替换为您的后端 Docker 镜像
+          image: huangjingl/pokedex-back-v2    # 替换为您的后端 Docker 镜像
           ports: 
           - containerPort: 3000
