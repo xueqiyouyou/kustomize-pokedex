@@ -1,2 +1,3 @@
 resources:
   - deployment.yaml
+  - backend-service.yaml
